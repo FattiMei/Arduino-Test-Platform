@@ -1,0 +1,7 @@
+This project is made with the intention of simplifying the test procedures on Arduino boards. Having an experience in implementing code on Arduino, I found annoying writing and flashing code multiple times to change test conditions. Rather than designing for each test a simple interface I decided to make an effective solution.
+
+Arduino will be connected to the computer by the serial port, this will be the main communication channel. For the moment let's not consider the eventuality that the serial port might not be available.
+
+On Arduino runs a program that is able to execute commands and implement a simple debugger.
+
+On the PC a program with a GUI is able to control every aspect of the machine like timers, ports, interrupts. For the next level I imagine the feature of having compiled code stored in Arduino (maybe an SD card or the EEPROM).
