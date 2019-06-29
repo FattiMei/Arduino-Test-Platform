@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1561285492 source:c:\users\matteo\documents\github\arduino-test-platform\cmd-line\main.c
+1561756275 source:c:\users\matteo\documents\github\arduino-test-platform\cmd-line\main.c
 	<stdio.h>
 	<malloc.h>
+	<string.h>
 	"string-mei.h"
 
 1561274695 c:\users\matteo\documents\github\arduino-test-platform\cmd-line\string-mei.h

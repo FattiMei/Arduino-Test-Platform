@@ -1,15 +1,43 @@
 #include <stdio.h>
 #include <malloc.h>
-
+#include <string.h>
 #include "string-mei.h"
 
 #define VERSION "0.0"
 
+#define NUMBER 2
+
+/**define a command structure
+    It has a label, for associate the commands to the functions
+    It has a function pointer to a generic function that takes an array of pointers
+**/
+
+struct Command{
+    char* label;
+    void(*func)(char**);
+};
+
+void clear(char** args){
+    system("cls");
+}
+void version(char** args){
+    printf("System version %s\n", VERSION);
+}
+
+void help(char** args){
+    //stampa
+}
+
+//the commands are defined globally
+struct Command list[] = {
+    {"clear", &clear},
+    {"version", &version},
+    {"help", &help};
+};
+
 void Init(){
     printf("Welcome to the Arduino test platform!\nVersion %s\n", VERSION);
 }
-
-char *keywords[] = {"clear", "exit", "version"};
 
 char *shrink(char *s){
     char *shorter = NULL;
@@ -65,16 +93,39 @@ int main(){
     //initializations, prints the actual version
     Init();
 
-    char *command_raw = NULL;
+    char **words;
+    do{
+        char *command_raw = NULL, *command = NULL;
 
-    //get a raw string from the terminal
-    command_raw = stringScan();
+        //get a raw string from the terminal
+        command_raw = stringScan();
+        command = shrink(command_raw);
 
-    //eliminate superfluous blanks, in head middle and tail
-    command_raw = shrink(command_raw);
+        //we have to use an array of pointers to access directly each member of the command
 
-    //each blank divide a part of the command
-    //find the number of parts of the command
+        int parts = wc(command);
+
+        words = (char **) malloc(sizeof(char**) * parts);
+
+        for(int i = 0, flag = 1, count = 0; command[i] != '\0'; i++){
+            if(flag == 1){
+                flag = 0;
+                words[count++] = &(command[i]);
+            }
+            else{
+                if(command[i] == ' '){
+                    flag = 1;
+                    command[i] = '\0';
+                }
+            }
+        }
+
+        //compare the first word with a list of commands defined above
+        for(int i = 0; i < NUMBER; i++){
+            if(strcmp(words[0], list[i].label) == 0) list[i].func(NULL);
+        }
+    }while(strcmp(words[0], "exit") != 0);
+
 
     return 0;
 }
