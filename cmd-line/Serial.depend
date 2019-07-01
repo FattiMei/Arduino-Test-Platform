@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1561819240 source:c:\users\matteo\desktop\arduino-test-platform\serial.c
+	<stdio.h>
+	"serial.h"
+
+1561816538 c:\users\matteo\desktop\arduino-test-platform\serial.h
+	<stdio.h>
+
+1561814980 source:c:\users\matteo\desktop\arduino-test-platform\string-mei.c
+	<stdio.h>
+	<stdlib.h>
+
+1561831058 source:c:\users\matteo\desktop\arduino-test-platform\terminal-mei.c
+	<stdio.h>
+	"string-mei.h"
+
+1561803696 c:\users\matteo\desktop\arduino-test-platform\string-mei.h
+	<stdio.h>
+	<malloc.h>
+
+1561992781 source:c:\users\matteo\desktop\serial\serial.c
+	<stdio.h>
+	"serial.h"
+	"string-mei.h"
+
+1561992374 c:\users\matteo\desktop\serial\serial.h
+	<stdio.h>
+
+1561814980 source:c:\users\matteo\desktop\serial\string-mei.c
+	<stdio.h>
+	<stdlib.h>
+
+1561993874 source:c:\users\matteo\desktop\serial\terminal-mei.c
+	<stdio.h>
+	"string-mei.h"
+
+1561803696 c:\users\matteo\desktop\serial\string-mei.h
+	<stdio.h>
+	<malloc.h>
+
+1561994658 source:c:\users\matteo\desktop\serial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+	<unistd.h>
+	"string-mei.h"
+	"serial.h"
+	"terminal-mei.h"
+
+1561993874 c:\users\matteo\desktop\serial\terminal-mei.h
+

@@ -1,0 +1,14 @@
+a linea di comando
+powershell
+
+poi
+$port = new-Object System.IO.Ports.SerialPort COM3,9600,None,8,one
+
+$port.open()
+$port.WriteLine("string")
+$port.ReadLine()
+$port.Close()
+
+più intuitivo
+mode COM3 BAUD=9600 PARITY=n DATA=8
+echo hello > COM3
