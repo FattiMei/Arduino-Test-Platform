@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <malloc.h>
 
 int stringLen(char *s){
 	int size = 0;
@@ -173,4 +174,29 @@ int stringToNumber(char *s){
 	}
 
 	return result;
+}
+
+int stringToInt(char *s, int format){
+    const char set_character[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    int length = stringLen(s), i, cifra, result = 0, mask = 1;
+
+    if(length > 1){
+        if(format > 16 || format < 2) return -1;
+        else{
+            //check if the characters of the string are in the set
+            for(i = 0; i < length - 1; i++){
+                for(cifra = 0; cifra < format && s[i] != set_character[cifra]; cifra++);
+                if(cifra >= format) return -1;
+            }
+
+            //now with the conversion
+            for(i = length - 2; i >= 0; i--){
+                for(cifra = 0; cifra < format && s[i] != set_character[cifra]; cifra++);
+                result += (cifra * mask);
+                mask *= format;
+            }
+        }
+    }
+
+    return result;
 }

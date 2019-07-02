@@ -1,5 +1,7 @@
-#include <stdio.h>
-#include <malloc.h>
+#define HEX 16
+#define DEC 10
+#define OCT 8
+#define BIN 2
 
 int stringLen(char *s);
 char *stringScan();
@@ -10,3 +12,4 @@ int stringCompare(char *s, char *t);
 int stringIsNumber(char *s);
 void stringReverse(char *s);
 int stringToNumber(char *s);
+int stringToInt(char *s, int format);

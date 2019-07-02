@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #define COM "\\\\.\\COM3"
 
 FILE *arduino;

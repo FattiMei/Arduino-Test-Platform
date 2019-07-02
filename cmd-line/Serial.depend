@@ -50,3 +50,45 @@
 
 1561993874 c:\users\matteo\desktop\serial\terminal-mei.h
 
+1562059763 source:c:\users\matteo\documents\github\arduino-test-platform\cmd-line\serial.c
+	<stdio.h>
+	"serial.h"
+	"string-mei.h"
+
+1562056963 c:\users\matteo\documents\github\arduino-test-platform\cmd-line\serial.h
+
+1562057006 c:\users\matteo\documents\github\arduino-test-platform\cmd-line\string-mei.h
+
+1562057862 source:c:\users\matteo\documents\github\arduino-test-platform\cmd-line\string-mei.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+
+1562057030 source:c:\users\matteo\documents\github\arduino-test-platform\cmd-line\terminal-mei.c
+	<stdio.h>
+	<stdlib.h>
+	"string-mei.h"
+
+1562059618 source:c:\users\matteo\documents\github\arduino-test-platform\cmd-line\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+	<unistd.h>
+	"string-mei.h"
+	"serial.h"
+	"terminal-mei.h"
+	"functions.h"
+
+1562056067 c:\users\matteo\documents\github\arduino-test-platform\cmd-line\terminal-mei.h
+
+1562058808 c:\users\matteo\documents\github\arduino-test-platform\cmd-line\functions.h
+
+1562059876 source:c:\users\matteo\documents\github\arduino-test-platform\cmd-line\functions.c
+	<stdio.h>
+	<string.h>
+	<malloc.h>
+	"string-mei.h"
+	"terminal-mei.h"
+	"serial.h"
+

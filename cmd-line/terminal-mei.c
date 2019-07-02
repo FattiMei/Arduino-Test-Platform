@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "string-mei.h"
 
 int wc(char *s){
@@ -62,4 +63,22 @@ char* HexToAscii(unsigned char byte){
     }
 
     return s;
+}
+
+char** getArgumentsValue(char *command, int args){
+    char** argv;
+    argv = (char**) malloc(sizeof(char**) * args);
+
+    for(int j = 0, flag = 1, count = 0; command[j] != '\0'; j++){
+        if(flag == 1){
+            flag = 0;
+            argv[count++] = &(command[j]);
+        }
+        else if(command[j] == ' '){
+            flag = 1;
+            command[j] = '\0';
+        }
+    }
+
+    return argv;
 }
