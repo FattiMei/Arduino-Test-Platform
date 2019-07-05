@@ -1,14 +1,25 @@
 La comunicazione seriale va molto meglio adesso;
-Ora è necessario includerla in un sistema, questo è soltanto un blocco, pensavo di aiutarmi usando dei flag;
+Ora Ã¨ necessario includerla in un sistema, questo Ã¨ soltanto un blocco, pensavo di aiutarmi usando dei flag;
 
 Non sempre devo leggere il terminale
-Dopo l'input da stringa è necessario interpretare il dato, in quel momento non devo leggere il terminale, è bene separare bene le cose
+Dopo l'input da stringa Ã¨ necessario interpretare il dato, in quel momento non devo leggere il terminale, Ã¨ bene separare bene le cose
 
 Ad esempio per acquisizioni di stringhe da monitor seriale mi avvalgo sempre dell'input buffer, quindi definisco a priori i modi per
 accedere ai buffer di input e di output
 
-La cosa positiva è che ho finito di lavorare con l'I/O e posso quindi dedicarmi al sistema vero e proprio, ora che le funzioni per
+La cosa positiva Ã¨ che ho finito di lavorare con l'I/O e posso quindi dedicarmi al sistema vero e proprio, ora che le funzioni per
 la comunicazione seriale sono testate e funzionanti.
 
-Potrei scrivere delle funzioni più ad alto livello come la printf,
-Sicuramente ho bisogno di funzioni per la manipolazione delle stringhe, ne ho già scritte alcune.
+Potrei scrivere delle funzioni piÃ¹ ad alto livello come la printf,
+Sicuramente ho bisogno di funzioni per la manipolazione delle stringhe, ne ho giÃ  scritte alcune.
+
+Una documentazione preliminare:
+set: set <registro> <valore in binario>
+
+Scrive un dato dal monitor seriale su uno dei registri
+PINB, DDRB, PORTB, PINC, DDRC, PORTC, PIND, DDRD, PORTD, TCCR0A, TCCR0B, TCNT0, OCR0A, OCR0B, SREG,
+TIMSK0, TIMSK1, TCCR1A, TCCR1B, TCCR1C, OCR1AL, OCR1AH, OCR1BL, OCR1BH, TCCR2A, TCCR2B, OCR2A, OCR2B.
+
+read: read <registro>
+
+Scrive sul monitor serial il valore del registro
